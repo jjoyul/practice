@@ -1,6 +1,7 @@
 from django.http import HttpResponse, Http404
 from django.template.loader import get_template
 from django.template import Context
+from django.shortcuts import render
 import datetime
 
 def hello(request):
@@ -11,6 +12,4 @@ def my_homepage_view(request):
 
 def current_datetime(request):
     now = datetime.datetime.now()
-    t = get_template('current_datetime.html')
-    html = t.render(Context({'current_date': now}))
-    return HttpResponse(html)
+    return render(request, 'current.html', {'current_date': now})

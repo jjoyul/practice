@@ -20,6 +20,6 @@ from .views import hello, my_homepage_view, current_datetime
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', hello),
-    path('', my_homepage_view, 'homepage'),
-    path('time/', current_datetime, 'time'),
+    path('', my_homepage_view, name='homepage'),
+    path('time/', current_datetime),
 ]
