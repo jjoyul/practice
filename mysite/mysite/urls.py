@@ -15,11 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import hello, my_homepage_view, current_datetime
+from .views import hello, my_homepage_view, current_datetime, contact
+from books.views import search, search_form
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', hello),
-    path('', my_homepage_view, name='homepage'),
+    path('', my_homepage_view),
     path('time/', current_datetime),
+    path('search-form/', search_form),
+    path('search/', search),
+    path('contact/', contact),
 ]
